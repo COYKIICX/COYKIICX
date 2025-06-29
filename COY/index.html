@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ᴵᴬᴹ ᶜᵒʸ | guns.lol</title>
+    <meta name="description" content='Salmos 91:7-9:"𝑪𝒂𝒆𝒓𝒂𝒏 𝒂 𝒕𝒖 𝒍𝒂𝒅𝒐 𝒎𝒊𝒍, 𝒀 𝒅𝒊𝒆𝒛 𝒎𝒊𝒍 𝒂 𝒕𝒖 𝒅𝒊𝒆𝒔𝒕𝒓𝒂 𝑴𝒂𝒔 𝒂 𝒕𝒊 𝒏𝒐 𝒍𝒍𝒆𝒈𝒂𝒓𝒂𝒏"'>
+    <meta name="author" content="ᴵᴬᴹ ᶜᵒʸ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://assets.guns.lol/favicon/favicon-32x32.png">
+    <style>
+        body {
+            background-color: #000;
+            color: red;
+            font-family: 'Satoshi', sans-serif;
+            text-align: center;
+            padding: 2em;
+            overflow-x: hidden;
+        }
+        img.avatar {
+            border-radius: 50%;
+            width: 184px;
+            height: 184px;
+            box-shadow: 0 0 20px red;
+        }
+        .social a {
+            color: red;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="img/avatar.jpg" alt="avatar" class="avatar"><br><br>
+    <h1>ᴵᴬᴹ ᶜᵒʸ</h1>
+    <h3>Salmos 91:7-9:<br>"𝑪𝒂𝒆𝒓𝒂𝒏 𝒂 𝒕𝒖 𝒍𝒂𝒅𝒐 𝒎𝒊𝒍, 𝒀 𝒅𝒊𝒆𝒛 𝒎𝒊𝒍 𝒂 𝒕𝒖 𝒅𝒊𝒆𝒔𝒕𝒓𝒂<br>𝑴𝒂𝒔 𝒂 𝒕𝒊 𝒏𝒐 𝒍𝒍𝒆𝒈𝒂𝒓𝒂𝒏"</h3>
+    <p>Mexico</p>
+
+    <div class="social">
+        <p>Discord: coykiicx</p>
+        <a href="https://steamcommunity.com/profiles/76561199245269595/" target="_blank">Steam</a>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bgmusic" autoplay loop>
+        <source src="audio/Straight-2-It.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+    <script>
+        // Reproducir audio tras interacción si fue bloqueado
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bgmusic');
+            if (audio.paused) audio.play();
+        });
+    </script>
+
+    <!-- Lluvia de cruces -->
+    <script>
+        const crossRain = () => {
+            const cross = document.createElement('div');
+            cross.innerText = '✝';
+            cross.style.position = 'fixed';
+            cross.style.top = '-20px';
+            cross.style.left = `${Math.random() * 100}vw`;
+            cross.style.fontSize = `${Math.random() * 20 + 10}px`;
+            cross.style.color = 'red';
+            cross.style.opacity = Math.random();
+            cross.style.zIndex = 9999;
+            cross.style.pointerEvents = 'none';
+            document.body.appendChild(cross);
+
+            let fall = setInterval(() => {
+                const top = parseFloat(cross.style.top);
+                if (top < window.innerHeight) {
+                    cross.style.top = `${top + 2}px`;
+                } else {
+                    clearInterval(fall);
+                    cross.remove();
+                }
+            }, 20);
+        };
+        setInterval(crossRain, 150);
+    </script>
+
+</body>
+</html>
